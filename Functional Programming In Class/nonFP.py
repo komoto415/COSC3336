@@ -65,22 +65,42 @@ def main():
     time = 5
     car_positions = [1, 1, 1]
 
-    # while time:
+    while time:
         # decrease time
-        # time -= 1
-        # print('')
-        # for i in range(len(car_positions)):
-        #     # move car
-        #     if random() > 0.3:
-        #         car_positions[i] += 1
-        #
-        #     # draw car
-        #     print( '-' * car_positions[i])
+        time -= 1
+        print('')
+        for i in range(len(car_positions)):
+            # move car
+            if random() > 0.3:
+                car_positions[i] += 1
 
-    h = list(map(lambda x: x+1 if random() > 0.3 else x, car_positions))
+            # draw car
+            print( '-' * car_positions[i])
 
-    for i in range(len(car_positions)):
-        print(h[i] * '-')
+    print("BOB")
+
+    time = 5;
+    car_positions = [1,1,1]
+
+    # decrement for loop
+    # 4 --> 0
+    # for x in range(time-1,-1,-1)
+
+    def change(curPos):
+        if random() > 0.3:
+            curPos += 1
+        print(curPos * '-')
+        return curPos
+
+    while time:
+        time -= 1
+        print('')
+        car_positions = list(map(change, car_positions))
+
+    # print(h)
+    # z =
+    # for i in range(len(car_positions)):
+    # print(h[i] * '-')
 
 
     print("Let us look at a few more functions")
