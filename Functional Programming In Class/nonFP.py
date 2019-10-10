@@ -82,26 +82,22 @@ def main():
     time = 5;
     car_positions = [1,1,1]
 
-    # decrement for loop
-    # 4 --> 0
-    # for x in range(time-1,-1,-1)
-
     def change(curPos):
+        # print('')
         if random() > 0.3:
             curPos += 1
         print(curPos * '-')
         return curPos
 
-    while time:
-        time -= 1
-        print('')
-        car_positions = list(map(change, car_positions))
+    def timeChange(time, carPos):
+        if time == 0:
+            return
+        else:
+            print('')
+            posUp = list(map(change, carPos))
+            return timeChange(time-1,posUp)
 
-    # print(h)
-    # z =
-    # for i in range(len(car_positions)):
-    # print(h[i] * '-')
-
+    timeChange(time,car_positions)
 
     print("Let us look at a few more functions")
     print(rule_sequence('0101', [zero, one, zero]))
