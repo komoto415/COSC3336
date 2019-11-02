@@ -78,7 +78,7 @@ lsName x y
     | otherwise                 = y
 
 sumFum :: (Person -> Person -> Person) -> [Person] -> Person
-sunFum f [y] = y
+sumFum f [y] = y
 sumFum f (y:ys) = f y (sumFum f ys)
 
 main = do
